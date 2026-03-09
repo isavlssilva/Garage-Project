@@ -17,90 +17,90 @@ public class Veiculo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ID;
-    private String Marca;
-    private String Modelo;
-    private String Cor;
-    private int Ano;
-    private double KM;
-    private String Avarias;
+    private long id;
+    private String marca;
+    private String modelo;
+    private String cor;
+    private int ano;
+    private double km;
+    private String avarias;
 
     @Column(name = "linkimagem")
-    private String LinkImagem;
+    private String linkImagem;
 
     @Column(name = "descricaocompleta")
-    private String DescricaoCompleta;
+    private String descricaoCompleta;
 
     public long getId() {
-        return ID;
+        return id;
     }
 
-    public void setId(long ID) {
-        this.ID = ID;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getMarca() {
-        return Marca;
+        return marca;
     }
 
-    public void setMarca(String Marca) {
-        this.Marca = Marca;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     public String getModelo() {
-        return Modelo;
+        return modelo;
     }
 
-    public void setModelo(String Modelo) {
-        this.Modelo = Modelo;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
     public String getCor() {
-        return Cor;
+        return cor;
     }
 
-    public void setCor(String Cor) {
-        this.Cor = Cor;
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
     public int getAno() {
-        return Ano;
+        return ano;
     }
 
-    public void setAno(int Ano) {
-        this.Ano = Ano;
+    public void setAno(int ano) {
+        this.ano = ano;
     }
 
     public double getKM() {
-        return KM;
+        return km;
     }
 
-    public void setKM(double KM) {
-        this.KM = KM;
+    public void setKM(double km) {
+        this.km = km;
     }
 
     public String getAvarias() {
-        return Avarias;
+        return avarias;
     }
 
-    public void setAvarias(String Avarias) {
-        this.Avarias = Avarias;
+    public void setAvarias(String avarias) {
+        this.avarias = avarias;
     }
 
     public String getLinkImagem() {
-        return LinkImagem;
+        return linkImagem;
     }
 
-    public void setLinkImagem(String LinkImagem) {
-        this.LinkImagem = LinkImagem;
+    public void setLinkImagem(String linkImagem) {
+        this.linkImagem = linkImagem;
     }
 
     public String getDescricaoCompleta() {
-        return DescricaoCompleta;
+        return descricaoCompleta;
     }
 
-    public void setDescricaoCompleta(String DescricaoCompleta) {
-        this.DescricaoCompleta = DescricaoCompleta;
+    public void setDescricaoCompleta(String descricaoCompleta) {
+        this.descricaoCompleta = descricaoCompleta;
     }
 
     

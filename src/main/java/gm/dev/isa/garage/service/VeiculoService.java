@@ -25,4 +25,11 @@ public class VeiculoService {
         List<Veiculo> result = veiculoRepository.findAll();
         return result;
     }
+    
+     public List<Veiculo> findByCor(String cor){
+        
+        List<Veiculo> result = veiculoRepository.findByCorIgnoreCase(cor);
+        return result;
+    }
+    
 }
