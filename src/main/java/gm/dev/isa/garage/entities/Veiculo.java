@@ -17,7 +17,7 @@ public class Veiculo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long ID;
     private String Marca;
     private String Modelo;
     private String Cor;
@@ -32,11 +32,11 @@ public class Veiculo {
     private String DescricaoCompleta;
 
     public long getId() {
-        return id;
+        return ID;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long ID) {
+        this.ID = ID;
     }
 
     public String getMarca() {
