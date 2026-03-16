@@ -17,29 +17,40 @@ import gm.dev.isa.garage.repositories.VeiculoRepository;
  */
 @Service
 public class VeiculoService {
-    
+
     @Autowired
-    private VeiculoRepository veiculoRepository; 
-    
-    public List<Veiculo> findAll(){
-        
+    private VeiculoRepository veiculoRepository;
+
+    //EndPoint todos os caros
+    public List<Veiculo> findAll() {
+
         List<Veiculo> result = veiculoRepository.findAll();
         return result;
     }
+
+    //EndPoint Id
+    public List<Veiculo> findByID(int id) {
+
+        List<Veiculo> result = veiculoRepository.findById(id);
+        return result;
+    }
     
-     public List<Veiculo> findByCor(String cor){
-        
+    //EndPoint cor
+    public List<Veiculo> findByCor(String cor) {
+
         List<Veiculo> result = veiculoRepository.findByCorIgnoreCase(cor);
         return result;
     }
-     
 
-     public List<VeiculoMinDTO> findByAno (int ano){
-         List<Veiculo> resultVeiculo = veiculoRepository.findByAno(ano);
-         
-         List<VeiculoMinDTO> resultDTO = resultVeiculo.stream().map(x -> new VeiculoMinDTO(x)).toList();
-         
-         return resultDTO;
-     }
-    
+    //EndPoint ano
+    public List<VeiculoMinDTO> findByAno(int ano) {
+        List<Veiculo> resultVeiculo = veiculoRepository.findByAno(ano);
+
+        List<VeiculoMinDTO> resultDTO = resultVeiculo.stream().map(x -> new VeiculoMinDTO(x)).toList();
+
+        return resultDTO;
+    }
+
+   
+
 }

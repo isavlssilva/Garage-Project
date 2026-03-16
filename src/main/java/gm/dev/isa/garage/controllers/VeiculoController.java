@@ -18,37 +18,49 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author digma
  */
-
 @RestController
 public class VeiculoController {
-    
-    @Autowired  
+
+    @Autowired
     private VeiculoService veiculoService;
-    
+
     @GetMapping("/forsale")
-    public List<Veiculo> findAll(){
+    public List<Veiculo> findAll() {
         List<Veiculo> result = veiculoService.findAll();
         return result;
-        
+
     }
-    @GetMapping("/color/{corName}")
-    public ResponseEntity<List<Veiculo>> findByCorIgnoreCase(@PathVariable String corName){
-        List<Veiculo> result = veiculoService.findByCor(corName);
-        
-        if(result.isEmpty()){
-            
+
+    @GetMapping("/forsale/{idName}")
+    public ResponseEntity<List<Veiculo>> findByid(@PathVariable int idName) {
+        List<Veiculo> result = veiculoService.findByID(idName);
+        if (result.isEmpty()) {
+
             return ResponseEntity.notFound().build();
-        }else{
+        } else {
             return ResponseEntity.ok(result);
         }
     }
-    @GetMapping("/ano/{anoName}")
-    public ResponseEntity<List<VeiculoMinDTO>> findByAno(@PathVariable int anoName){
-        
-       List<VeiculoMinDTO> result = veiculoService.findByAno(anoName); 
-        if(result.isEmpty()){
+
+    @GetMapping("/color/{corName}")
+    public ResponseEntity<List<Veiculo>> findByCorIgnoreCase(@PathVariable String corName) {
+        List<Veiculo> result = veiculoService.findByCor(corName);
+
+        if (result.isEmpty()) {
+
             return ResponseEntity.notFound().build();
-        } else{
+        } else {
+            return ResponseEntity.ok(result);
+        }
+    }
+
+    @GetMapping("/ano/{anoName}")
+    public ResponseEntity<List<VeiculoMinDTO>> findByAno(@PathVariable int anoName) {
+
+        List<VeiculoMinDTO> result = veiculoService.findByAno(anoName);
+        if (result.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
             return ResponseEntity.ok(result);
         }
     }
