@@ -4,6 +4,7 @@
  */
 package gm.dev.isa.garage.controllers;
 
+import gm.dev.isa.garage.Veiculo.DTO.VeiculoMinDTO;
 import gm.dev.isa.garage.entities.Veiculo;
 import gm.dev.isa.garage.service.VeiculoService;
 import java.util.List;
@@ -38,6 +39,16 @@ public class VeiculoController {
             
             return ResponseEntity.notFound().build();
         }else{
+            return ResponseEntity.ok(result);
+        }
+    }
+    @GetMapping("/ano/{anoName}")
+    public ResponseEntity<List<VeiculoMinDTO>> findByAno(@PathVariable int anoName){
+        
+       List<VeiculoMinDTO> result = veiculoService.findByAno(anoName); 
+        if(result.isEmpty()){
+            return ResponseEntity.notFound().build();
+        } else{
             return ResponseEntity.ok(result);
         }
     }

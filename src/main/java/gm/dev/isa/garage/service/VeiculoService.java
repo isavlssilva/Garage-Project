@@ -4,6 +4,7 @@
  */
 package gm.dev.isa.garage.service;
 
+import gm.dev.isa.garage.Veiculo.DTO.VeiculoMinDTO;
 import gm.dev.isa.garage.entities.Veiculo;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,14 @@ public class VeiculoService {
         List<Veiculo> result = veiculoRepository.findByCorIgnoreCase(cor);
         return result;
     }
+     
+
+     public List<VeiculoMinDTO> findByAno (int ano){
+         List<Veiculo> resultVeiculo = veiculoRepository.findByAno(ano);
+         
+         List<VeiculoMinDTO> resultDTO = resultVeiculo.stream().map(x -> new VeiculoMinDTO(x)).toList();
+         
+         return resultDTO;
+     }
     
 }
