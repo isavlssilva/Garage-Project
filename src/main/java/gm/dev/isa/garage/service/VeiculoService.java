@@ -34,7 +34,7 @@ public class VeiculoService {
         List<Veiculo> result = veiculoRepository.findById(id);
         return result;
     }
-    
+
     //EndPoint cor
     public List<Veiculo> findByCor(String cor) {
 
@@ -51,6 +51,8 @@ public class VeiculoService {
         return resultDTO;
     }
 
-   
-
+    public Veiculo salvarVeiculo(Veiculo novoVeiculo) {
+        Veiculo veiculo = veiculoRepository.save(novoVeiculo);
+        return veiculo;
+    }
 }

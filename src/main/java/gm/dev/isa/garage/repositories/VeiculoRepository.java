@@ -8,14 +8,15 @@ import gm.dev.isa.garage.entities.Veiculo;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-
-
 /**
  *
  * @author digma
  */
-public interface VeiculoRepository extends JpaRepository <Veiculo, Long>{
+public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
+
     List<Veiculo> findByCorIgnoreCase(String cor);
+
     List<Veiculo> findByAno(int ano);
+
     List<Veiculo> findById(int id);
 }

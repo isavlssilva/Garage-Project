@@ -103,9 +103,4 @@ public class Veiculo {
         this.descricaoCompleta = descricaoCompleta;
     }
 
-    
-     
-    
-    
-    
 }

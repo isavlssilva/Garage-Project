@@ -11,6 +11,7 @@ import gm.dev.isa.garage.entities.Veiculo;
  * @author digma
  */
 public class VeiculoMinDTO {
+
     private long id;
     private String marca;
     private String modelo;
@@ -47,8 +48,5 @@ public class VeiculoMinDTO {
     public int getAno() {
         return ano;
     }
-    
+
 }
-
-
-
